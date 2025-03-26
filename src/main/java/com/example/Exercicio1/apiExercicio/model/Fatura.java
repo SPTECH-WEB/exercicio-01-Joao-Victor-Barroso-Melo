@@ -23,7 +23,7 @@ public class Fatura {
     private Long id;
 
     @NotBlank(message = "numero do cartao não deve ser vazio")
-    @Digits(integer = 16, fraction = 4, message = "Cartão inválido")
+    @Pattern(regexp = "\\d{4}\\s\\d{4}\\s\\d{4}\\s\\d{4}", message = "Cartão inválido")
     @JsonProperty("numeroCartao")
     private String numeroCartao;
 
